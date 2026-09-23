@@ -4,9 +4,6 @@
 // separated and NOT treated as DB-mapped data.
 // ============================================================================
 
-import { CourseCardProps } from "@/components/MyCourseCard";
-import { NotificationCardProps } from "@/components/NotificationCard";
-
 // ============================================================================
 // UI CONFIG — Not persisted in DB
 // ============================================================================
@@ -15,9 +12,21 @@ export const COURSE_TABS = ["Ongoing", "Completed"];
 export const COURSE_DETAILS_TABS = ["About", "Lessons", "Reviews"];
 
 export const ONBOARDING_SLIDES = [
-  { id: "1", title: "We provide the best learning courses!", buttonText: "Next" },
-  { id: "2", title: "Learn anytime and anywhere easily and conveniently", buttonText: "Next" },
-  { id: "3", title: "Let's improve your skills together on Cybergate right now!", buttonText: "Get Started" },
+  {
+    id: "1",
+    title: "We provide the best learning courses!",
+    buttonText: "Next",
+  },
+  {
+    id: "2",
+    title: "Learn anytime and anywhere easily and conveniently",
+    buttonText: "Next",
+  },
+  {
+    id: "3",
+    title: "Let's improve your skills together on Cybergate right now!",
+    buttonText: "Get Started",
+  },
 ];
 
 export const RECENT_SEARCHES: string[] = [
@@ -39,16 +48,57 @@ export const CHECKOUT_OPTIONS = [
 ];
 
 export const PROFILE_MENU_ITEMS = [
-  { id: "1", title: "Edit Profile", iconFamily: "Feather", iconName: "user", route: "/editprofile" },
-  { id: "2", title: "Notification", iconFamily: "Ionicons", iconName: "notifications-outline", route: "/notification" },
-  { id: "3", title: "Security", iconFamily: "Ionicons", iconName: "shield-checkmark-outline", route: "/" },
-  { id: "4", title: "Privacy Policy", iconFamily: "Octicons", iconName: "note", route: "/(screens)/privacypolicy" },
-  { id: "5", title: "Help Center", iconFamily: "FontAwesome5", iconName: "headset", route: "/(screens)/helpcenter" },
-  { id: "6", title: "About", iconFamily: "Feather", iconName: "info", route: "/(screens)/about" },
+  {
+    id: "1",
+    title: "Edit Profile",
+    iconFamily: "Feather",
+    iconName: "user",
+    route: "/editprofile",
+  },
+  {
+    id: "2",
+    title: "Notification",
+    iconFamily: "Ionicons",
+    iconName: "notifications-outline",
+    route: "/notification",
+  },
+  {
+    id: "3",
+    title: "Security",
+    iconFamily: "Ionicons",
+    iconName: "shield-checkmark-outline",
+    route: "/",
+  },
+  {
+    id: "4",
+    title: "Privacy Policy",
+    iconFamily: "Octicons",
+    iconName: "note",
+    route: "/(screens)/privacypolicy",
+  },
+  {
+    id: "5",
+    title: "Help Center",
+    iconFamily: "FontAwesome5",
+    iconName: "headset",
+    route: "/(screens)/helpcenter",
+  },
+  {
+    id: "6",
+    title: "About",
+    iconFamily: "Feather",
+    iconName: "info",
+    route: "/(screens)/about",
+  },
 ];
 
 export const HELP_CONTACT_OPTIONS = [
-  { id: "cs", icon: "headset-outline", label: "Customer Service", route: "/(screens)/customerservice" },
+  {
+    id: "cs",
+    icon: "headset-outline",
+    label: "Customer Service",
+    route: "/(screens)/customerservice",
+  },
   { id: "wa", icon: "logo-whatsapp", label: "WhatsApp" },
   { id: "web", icon: "globe-outline", label: "Website" },
   { id: "fb", icon: "logo-facebook", label: "Facebook" },
@@ -121,9 +171,9 @@ export interface User {
   fullName: string;
   username: string;
   email: string;
-  phoneNumber: string;       // store as full international string
-  countryCode: string;       // for phone input UI only
-  callingCode: string;       // for phone input UI only
+  phoneNumber: string; // store as full international string
+  countryCode: string; // for phone input UI only
+  callingCode: string; // for phone input UI only
   dateOfBirth: string;
   gender: string;
   avatarUrl?: string;
@@ -149,7 +199,7 @@ export const CURRENT_USER: User = {
 
 export interface Course {
   id: string;
-  imageUri: string;          // URI string, not require()
+  imageUri: string; // URI string, not require()
   name: string;
   category: string;
   price: number;
@@ -198,9 +248,7 @@ export const MOCK_COURSES: Course[] = [
     durationHours: 3,
     totalLessons: 98,
     hasCertificate: true,
-    about: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    ],
+    about: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."],
     tools: ["Notion", "Canva"],
     reviewsCount: "3,210",
   },
@@ -223,6 +271,26 @@ export const MOCK_COURSES: Course[] = [
     ],
     tools: ["Figma"],
     reviewsCount: "4,479",
+  },
+  {
+    id: "wordpress",
+    imageUri: "https://picsum.photos/seed/wordpress/200/200",
+    name: "WordPress Website Development",
+    category: "Web Development",
+    price: 45,
+    originalPrice: 70,
+    rating: 4.8,
+    totalStudents: "5,642",
+    mentorId: "m_2",
+    durationHours: 3,
+    totalLessons: 146,
+    hasCertificate: true,
+    about: [
+      "Learn how to build, customize, and manage professional WordPress websites.",
+      "Build practical websites with themes, plugins, and reusable content workflows.",
+    ],
+    tools: ["WordPress", "Elementor"],
+    reviewsCount: "2,840",
   },
 ];
 
@@ -289,8 +357,24 @@ export const COURSE_LESSONS_DATA: LessonSection[] = [
     title: "Section 1 - Introduction",
     totalDuration: "15 mins",
     lessons: [
-      { id: "l1", courseId: "ui-ux", sectionId: "s1", number: "01", title: "Why Using Figma", duration: "10 mins", isUnlocked: true },
-      { id: "l2", courseId: "ui-ux", sectionId: "s1", number: "02", title: "Set up Your Figma Account", duration: "5 mins", isUnlocked: false },
+      {
+        id: "l1",
+        courseId: "ui-ux",
+        sectionId: "s1",
+        number: "01",
+        title: "Why Using Figma",
+        duration: "10 mins",
+        isUnlocked: true,
+      },
+      {
+        id: "l2",
+        courseId: "ui-ux",
+        sectionId: "s1",
+        number: "02",
+        title: "Set up Your Figma Account",
+        duration: "5 mins",
+        isUnlocked: false,
+      },
     ],
   },
   {
@@ -299,10 +383,42 @@ export const COURSE_LESSONS_DATA: LessonSection[] = [
     title: "Section 2 - Figma Basic",
     totalDuration: "60 mins",
     lessons: [
-      { id: "l3", courseId: "ui-ux", sectionId: "s2", number: "03", title: "Take a Look Figma Interface", duration: "15 mins", isUnlocked: false },
-      { id: "l4", courseId: "ui-ux", sectionId: "s2", number: "04", title: "Working with Frame & Layer", duration: "10 mins", isUnlocked: false },
-      { id: "l5", courseId: "ui-ux", sectionId: "s2", number: "05", title: "Working with Text & Grids", duration: "10 mins", isUnlocked: false },
-      { id: "l6", courseId: "ui-ux", sectionId: "s2", number: "06", title: "Using Figma Plugins", duration: "25 mins", isUnlocked: false },
+      {
+        id: "l3",
+        courseId: "ui-ux",
+        sectionId: "s2",
+        number: "03",
+        title: "Take a Look Figma Interface",
+        duration: "15 mins",
+        isUnlocked: false,
+      },
+      {
+        id: "l4",
+        courseId: "ui-ux",
+        sectionId: "s2",
+        number: "04",
+        title: "Working with Frame & Layer",
+        duration: "10 mins",
+        isUnlocked: false,
+      },
+      {
+        id: "l5",
+        courseId: "ui-ux",
+        sectionId: "s2",
+        number: "05",
+        title: "Working with Text & Grids",
+        duration: "10 mins",
+        isUnlocked: false,
+      },
+      {
+        id: "l6",
+        courseId: "ui-ux",
+        sectionId: "s2",
+        number: "06",
+        title: "Using Figma Plugins",
+        duration: "25 mins",
+        isUnlocked: false,
+      },
     ],
   },
   {
@@ -311,10 +427,42 @@ export const COURSE_LESSONS_DATA: LessonSection[] = [
     title: "Section 3 - Let's Practice",
     totalDuration: "75 mins",
     lessons: [
-      { id: "l7", courseId: "ui-ux", sectionId: "s3", number: "07", title: "Let's Design a Sign-Up Form", duration: "35 mins", isUnlocked: false },
-      { id: "l8", courseId: "ui-ux", sectionId: "s3", number: "08", title: "Let's Create a Prototype", duration: "20 mins", isUnlocked: false },
-      { id: "l9", courseId: "ui-ux", sectionId: "s3", number: "09", title: "Sharing Work with Team", duration: "8 mins", isUnlocked: false },
-      { id: "l10", courseId: "ui-ux", sectionId: "s3", number: "10", title: "Exporting Assets", duration: "12 mins", isUnlocked: false },
+      {
+        id: "l7",
+        courseId: "ui-ux",
+        sectionId: "s3",
+        number: "07",
+        title: "Let's Design a Sign-Up Form",
+        duration: "35 mins",
+        isUnlocked: false,
+      },
+      {
+        id: "l8",
+        courseId: "ui-ux",
+        sectionId: "s3",
+        number: "08",
+        title: "Let's Create a Prototype",
+        duration: "20 mins",
+        isUnlocked: false,
+      },
+      {
+        id: "l9",
+        courseId: "ui-ux",
+        sectionId: "s3",
+        number: "09",
+        title: "Sharing Work with Team",
+        duration: "8 mins",
+        isUnlocked: false,
+      },
+      {
+        id: "l10",
+        courseId: "ui-ux",
+        sectionId: "s3",
+        number: "10",
+        title: "Exporting Assets",
+        duration: "12 mins",
+        isUnlocked: false,
+      },
     ],
   },
 ];
@@ -396,7 +544,7 @@ export interface Review {
   id: string;
   courseId: string;
   userId: string;
-  name: string;              // denormalized for display
+  name: string; // denormalized for display
   avatarUri: string;
   rating: number;
   comment: string;
@@ -419,11 +567,65 @@ export const COURSE_REVIEWS_META: CourseReviewsMeta = {
 };
 
 export const COURSE_REVIEWS_DATA: Review[] = [
-  { id: "r1", courseId: "ui-ux", userId: "u_ext_1", name: "Marielle Wigington", avatarUri: "https://picsum.photos/seed/marielle/80/80", rating: 5, comment: "The course is very good, the explanation of the mentor is very clear and easy to understand 😍😎", likes: 948, createdAt: "2024-12-01" },
-  { id: "r2", courseId: "ui-ux", userId: "u_ext_2", name: "Tanner Stafford", avatarUri: "https://picsum.photos/seed/tanner/80/80", rating: 4, comment: "Extraordinary! I just finished it and it really helped 👍", likes: 836, createdAt: "2024-12-01" },
-  { id: "r3", courseId: "ui-ux", userId: "u_ext_3", name: "Lauralee Quintero", avatarUri: "https://picsum.photos/seed/lauralee/80/80", rating: 5, comment: "Awesome! this is what I was looking for, I recommend to everyone ❤️❤️", likes: 724, createdAt: "2024-11-24" },
-  { id: "r4", courseId: "ui-ux", userId: "u_ext_4", name: "Chieko Chute", avatarUri: "https://picsum.photos/seed/chieko/80/80", rating: 5, comment: "Extraordinary! I just finished it and it really helped Thanks a lot! 🙌🙌", likes: 597, createdAt: "2024-12-01" },
-  { id: "r5", courseId: "ui-ux", userId: "u_ext_5", name: "Clinton Mcclure", avatarUri: "https://picsum.photos/seed/clinton/80/80", rating: 4, comment: "The quality of the courses and mentors is very good and the explanations are very easy to understand. 💯💯💯", likes: 472, createdAt: "2024-12-08" },
+  {
+    id: "r1",
+    courseId: "ui-ux",
+    userId: "u_ext_1",
+    name: "Marielle Wigington",
+    avatarUri: "https://picsum.photos/seed/marielle/80/80",
+    rating: 5,
+    comment:
+      "The course is very good, the explanation of the mentor is very clear and easy to understand 😍😎",
+    likes: 948,
+    createdAt: "2024-12-01",
+  },
+  {
+    id: "r2",
+    courseId: "ui-ux",
+    userId: "u_ext_2",
+    name: "Tanner Stafford",
+    avatarUri: "https://picsum.photos/seed/tanner/80/80",
+    rating: 4,
+    comment: "Extraordinary! I just finished it and it really helped 👍",
+    likes: 836,
+    createdAt: "2024-12-01",
+  },
+  {
+    id: "r3",
+    courseId: "ui-ux",
+    userId: "u_ext_3",
+    name: "Lauralee Quintero",
+    avatarUri: "https://picsum.photos/seed/lauralee/80/80",
+    rating: 5,
+    comment:
+      "Awesome! this is what I was looking for, I recommend to everyone ❤️❤️",
+    likes: 724,
+    createdAt: "2024-11-24",
+  },
+  {
+    id: "r4",
+    courseId: "ui-ux",
+    userId: "u_ext_4",
+    name: "Chieko Chute",
+    avatarUri: "https://picsum.photos/seed/chieko/80/80",
+    rating: 5,
+    comment:
+      "Extraordinary! I just finished it and it really helped Thanks a lot! 🙌🙌",
+    likes: 597,
+    createdAt: "2024-12-01",
+  },
+  {
+    id: "r5",
+    courseId: "ui-ux",
+    userId: "u_ext_5",
+    name: "Clinton Mcclure",
+    avatarUri: "https://picsum.photos/seed/clinton/80/80",
+    rating: 4,
+    comment:
+      "The quality of the courses and mentors is very good and the explanations are very easy to understand. 💯💯💯",
+    likes: 472,
+    createdAt: "2024-12-08",
+  },
 ];
 
 // ============================================================================
@@ -435,7 +637,7 @@ export interface Transaction {
   id: string;
   userId: string;
   courseId: string;
-  courseName: string;        // denormalized for display
+  courseName: string; // denormalized for display
   courseImageUri: string;
   amount: number;
   currency: string;
@@ -445,9 +647,42 @@ export interface Transaction {
 }
 
 export const TRANSACTIONS_DATA: Transaction[] = [
-  { id: "SK7263727399", userId: "u_1", courseId: "ui-ux", courseName: "Mastering Figma A to Z", courseImageUri: "https://picsum.photos/seed/figma/200/200", amount: 40.00, currency: "USD", paymentMethod: "Credit Card", status: "Paid", createdAt: "2024-12-14T14:27:45" },
-  { id: "SK7263727400", userId: "u_1", courseId: "3d-design", courseName: "Mastering Blender 3D", courseImageUri: "https://picsum.photos/seed/blender3d/200/200", amount: 48.00, currency: "USD", paymentMethod: "Credit Card", status: "Paid", createdAt: "2024-12-10T10:00:00" },
-  { id: "SK7263727401", userId: "u_1", courseId: "digital-entrepreneur", courseName: "Build Personal Branding", courseImageUri: "https://picsum.photos/seed/branding/200/200", amount: 39.00, currency: "USD", paymentMethod: "Credit Card", status: "Paid", createdAt: "2024-12-05T09:15:00" },
+  {
+    id: "SK7263727399",
+    userId: "u_1",
+    courseId: "ui-ux",
+    courseName: "Mastering Figma A to Z",
+    courseImageUri: "https://picsum.photos/seed/figma/200/200",
+    amount: 40.0,
+    currency: "USD",
+    paymentMethod: "Credit Card",
+    status: "Paid",
+    createdAt: "2024-12-14T14:27:45",
+  },
+  {
+    id: "SK7263727400",
+    userId: "u_1",
+    courseId: "3d-design",
+    courseName: "Mastering Blender 3D",
+    courseImageUri: "https://picsum.photos/seed/blender3d/200/200",
+    amount: 48.0,
+    currency: "USD",
+    paymentMethod: "Credit Card",
+    status: "Paid",
+    createdAt: "2024-12-10T10:00:00",
+  },
+  {
+    id: "SK7263727401",
+    userId: "u_1",
+    courseId: "digital-entrepreneur",
+    courseName: "Build Personal Branding",
+    courseImageUri: "https://picsum.photos/seed/branding/200/200",
+    amount: 39.0,
+    currency: "USD",
+    paymentMethod: "Credit Card",
+    status: "Paid",
+    createdAt: "2024-12-05T09:15:00",
+  },
 ];
 
 // ============================================================================
@@ -461,16 +696,61 @@ export interface AppNotification {
   description: string;
   iconName: string;
   iconBgColor: string;
-  createdAt: string;         // used to derive "Today / Yesterday / date" grouping in UI
+  createdAt: string; // used to derive "Today / Yesterday / date" grouping in UI
   isRead: boolean;
 }
 
 export const NOTIFICATIONS_DATA: AppNotification[] = [
-  { id: "1", userId: "u_1", title: "Payment Successful!", description: "You have made a course payment", iconName: "wallet-outline", iconBgColor: "#3B82F6", createdAt: "2024-12-22T09:00:00", isRead: false },
-  { id: "2", userId: "u_1", title: "Today's Special Offers", description: "You get a special promo today!", iconName: "star-outline", iconBgColor: "#F59E0B", createdAt: "2024-12-22T08:00:00", isRead: false },
-  { id: "3", userId: "u_1", title: "New Category Courses!", description: "Now the 3D design course is available", iconName: "grid-outline", iconBgColor: "#FF4D6D", createdAt: "2024-12-21T10:00:00", isRead: true },
-  { id: "4", userId: "u_1", title: "Credit Card Connected!", description: "Credit Card has been linked!", iconName: "card-outline", iconBgColor: "#3B82F6", createdAt: "2024-12-21T09:00:00", isRead: true },
-  { id: "5", userId: "u_1", title: "Account Setup Successful!", description: "Your account has been created!", iconName: "person-outline", iconBgColor: "#22C55E", createdAt: "2024-12-22T07:00:00", isRead: true },
+  {
+    id: "1",
+    userId: "u_1",
+    title: "Payment Successful!",
+    description: "You have made a course payment",
+    iconName: "wallet-outline",
+    iconBgColor: "#3B82F6",
+    createdAt: "2024-12-22T09:00:00",
+    isRead: false,
+  },
+  {
+    id: "2",
+    userId: "u_1",
+    title: "Today's Special Offers",
+    description: "You get a special promo today!",
+    iconName: "star-outline",
+    iconBgColor: "#F59E0B",
+    createdAt: "2024-12-22T08:00:00",
+    isRead: false,
+  },
+  {
+    id: "3",
+    userId: "u_1",
+    title: "New Category Courses!",
+    description: "Now the 3D design course is available",
+    iconName: "grid-outline",
+    iconBgColor: "#FF4D6D",
+    createdAt: "2024-12-21T10:00:00",
+    isRead: true,
+  },
+  {
+    id: "4",
+    userId: "u_1",
+    title: "Credit Card Connected!",
+    description: "Credit Card has been linked!",
+    iconName: "card-outline",
+    iconBgColor: "#3B82F6",
+    createdAt: "2024-12-21T09:00:00",
+    isRead: true,
+  },
+  {
+    id: "5",
+    userId: "u_1",
+    title: "Account Setup Successful!",
+    description: "Your account has been created!",
+    iconName: "person-outline",
+    iconBgColor: "#22C55E",
+    createdAt: "2024-12-22T07:00:00",
+    isRead: true,
+  },
 ];
 
 // ============================================================================
@@ -486,12 +766,48 @@ export interface SupportMessage {
 }
 
 export const INITIAL_SUPPORT_MESSAGES: SupportMessage[] = [
-  { id: "1", userId: "u_1", text: "Hello, good morning.", sentAt: "09:41", isUser: false },
-  { id: "2", userId: "u_1", text: "I am a Customer Service, is there anything I can help you with?", sentAt: "09:41", isUser: false },
-  { id: "3", userId: "u_1", text: "Hi, I'm having problems with my course payment.", sentAt: "09:41", isUser: true },
-  { id: "4", userId: "u_1", text: "Can you help me?", sentAt: "09:41", isUser: true },
-  { id: "5", userId: "u_1", text: "Of course...", sentAt: "09:41", isUser: false },
-  { id: "6", userId: "u_1", text: "Can you tell me the problem you are having? so I can help solve it", sentAt: "10:00", isUser: false },
+  {
+    id: "1",
+    userId: "u_1",
+    text: "Hello, good morning.",
+    sentAt: "09:41",
+    isUser: false,
+  },
+  {
+    id: "2",
+    userId: "u_1",
+    text: "I am a Customer Service, is there anything I can help you with?",
+    sentAt: "09:41",
+    isUser: false,
+  },
+  {
+    id: "3",
+    userId: "u_1",
+    text: "Hi, I'm having problems with my course payment.",
+    sentAt: "09:41",
+    isUser: true,
+  },
+  {
+    id: "4",
+    userId: "u_1",
+    text: "Can you help me?",
+    sentAt: "09:41",
+    isUser: true,
+  },
+  {
+    id: "5",
+    userId: "u_1",
+    text: "Of course...",
+    sentAt: "09:41",
+    isUser: false,
+  },
+  {
+    id: "6",
+    userId: "u_1",
+    text: "Can you tell me the problem you are having? so I can help solve it",
+    sentAt: "10:00",
+    isUser: false,
+  },
 ];
 
 // ============================================================================
@@ -513,9 +829,39 @@ export interface HelpArticle {
 }
 
 export const HELP_ARTICLES: HelpArticle[] = [
-  { id: "elera", category: "General", question: "What is Cybergate?", answer: "Cybergate is a learning platform that helps you discover practical courses and build skills at your own pace." },
-  { id: "use-elera", category: "General", question: "How to use Cybergate?", answer: "Browse a course, open its details, and enroll to start learning. Your active courses are available from the home screen." },
-  { id: "create-course", category: "Course", question: "Can I create my own course?", answer: "Course creation is not available yet, but you can contact our support team to register your interest." },
-  { id: "free", category: "Payment", question: "Is Cybergate free to use?", answer: "You can explore the platform for free. Individual courses may have their own enrollment price." },
-  { id: "offer", category: "Payment", question: "How to make offer on Cybergate?", answer: "Open the course you are interested in and check the available purchase options before completing checkout." },
+  {
+    id: "elera",
+    category: "General",
+    question: "What is Cybergate?",
+    answer:
+      "Cybergate is a learning platform that helps you discover practical courses and build skills at your own pace.",
+  },
+  {
+    id: "use-elera",
+    category: "General",
+    question: "How to use Cybergate?",
+    answer:
+      "Browse a course, open its details, and enroll to start learning. Your active courses are available from the home screen.",
+  },
+  {
+    id: "create-course",
+    category: "Course",
+    question: "Can I create my own course?",
+    answer:
+      "Course creation is not available yet, but you can contact our support team to register your interest.",
+  },
+  {
+    id: "free",
+    category: "Payment",
+    question: "Is Cybergate free to use?",
+    answer:
+      "You can explore the platform for free. Individual courses may have their own enrollment price.",
+  },
+  {
+    id: "offer",
+    category: "Payment",
+    question: "How to make offer on Cybergate?",
+    answer:
+      "Open the course you are interested in and check the available purchase options before completing checkout.",
+  },
 ];
